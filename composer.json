@@ -1,0 +1,31 @@
+{
+  "name": "howincodes/laravel-rabbitmq",
+  "description": "A Laravel RabbitMQ wrapper with automatic dead-letter retry",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "rabbitmq",
+    "amqp",
+    "queue"
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^9.0|^10.0",
+    "php-amqplib/php-amqplib": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "HowinCodes\\RabbitMQ\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "HowinCodes\\RabbitMQ\\RabbitMQServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
