@@ -22,7 +22,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "HowinCodes\\\\RabbitMQ\\\\RabbitMQServiceProvider"
+        "HowinCodes\\RabbitMQ\\RabbitMQServiceProvider"
       ]
     }
   },
