@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace HowinCodes\RabbitMQ;
 
 use HowinCodes\RabbitMQ\Connection\ConnectionManager;
-use PhpAmqplib\Message\AMQPMessage;
+use PhpAmqpLib\Message\AMQPMessage;
 use InvalidArgumentException;
 
 final class Publisher

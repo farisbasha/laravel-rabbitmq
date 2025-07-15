@@ -7,7 +7,7 @@ namespace HowinCodes\RabbitMQ\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use HowinCodes\RabbitMQ\Connection\ConnectionManager;
-use PhpAmqplib\Wire\AMQPTable;
+use PhpAmqpLib\Wire\AMQPTable;
 
 final class ConsumeQueues extends Command
 {

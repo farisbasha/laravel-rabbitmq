@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace HowinCodes\RabbitMQ\Connection;
 
-use PhpAmqplib\Connection\AMQPStreamConnection;
-use PhpAmqplib\Channel\AMQPChannel;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Channel\AMQPChannel;
 
 final class ConnectionManager
 {
