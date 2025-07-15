@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "HowinCodes\\\\RabbitMQ\\\\": "src/"
+      "HowinCodes\\RabbitMQ\\": "src/"
     }
   },
   "extra": {
