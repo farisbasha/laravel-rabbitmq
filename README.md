@@ -16,7 +16,7 @@ php artisan vendor:publish \
   --tag="config"
 ```
 
-````
+
 
 This will drop a `config/rabbitmq.php` file into your project.
 
