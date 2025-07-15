@@ -11,18 +11,18 @@
   ],
   "require": {
     "php": "^8.0",
-    "illuminate/support": "^9.0|^10.0",
+    "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
     "php-amqplib/php-amqplib": "^3.0"
   },
   "autoload": {
     "psr-4": {
-      "HowinCodes\\RabbitMQ\\": "src/"
+      "HowinCodes\\\\RabbitMQ\\\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "HowinCodes\\RabbitMQ\\RabbitMQServiceProvider"
+        "HowinCodes\\\\RabbitMQ\\\\RabbitMQServiceProvider"
       ]
     }
   },
