@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace HowinCodes\RabbitMQ\Contracts;
 
 /**
- * Implement to handle messages from a queue.
+ * Must be implemented by any queue message handler.
  */
 interface HandlerInterface
 {
     /**
-     * @param string $routingKey
-     * @param array  $payload
+     * Handle an incoming message.
+     *
+     * @param  string  $routingKey
+     * @param  array   $payload
      */
     public static function handle(string $routingKey, array $payload): void;
 }

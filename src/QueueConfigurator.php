@@ -8,10 +8,6 @@ use Illuminate\Support\Arr;
 
 final class QueueConfigurator
 {
-    /**
-     * Expand base queues with retry rules into full
-     * exchanges + queues definitions.
-     */
     public static function build(array $config): array
     {
         $exchanges = $config['exchanges'] ?? [];
@@ -25,19 +21,16 @@ final class QueueConfigurator
                 $dlxQueue     = $name . '.retry';
                 $dlxRouting   = $retryOpts['routing_key'] ?? $dlxQueue;
 
-                // 1) Add DLX exchange
                 $exchanges[$dlxExchange] = [
                     'type'    => $retryOpts['type']    ?? 'direct',
                     'durable' => $retryOpts['durable'] ?? true,
                 ];
 
-                // 2) Attach DLX args to base queue
                 $queues[$name]['arguments'] = [
                     'x-dead-letter-exchange'    => $dlxExchange,
                     'x-dead-letter-routing-key' => $dlxRouting,
                 ];
 
-                // 3) Auto-create retry queue
                 $queues[$dlxQueue] = [
                     'exchange'     => $dlxExchange,
                     'routing_keys' => [$dlxRouting],

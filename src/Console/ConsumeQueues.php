@@ -21,7 +21,6 @@ final class ConsumeQueues extends Command
         $handlers  = config('rabbitmq.queue_handlers', []);
         $ch        = $conn->channel();
 
-        // 1) Declare exchanges
         foreach ($exchanges as $name => $opts) {
             $ch->exchange_declare(
                 $name,
@@ -32,7 +31,6 @@ final class ConsumeQueues extends Command
             );
         }
 
-        // 2) Declare & bind queues
         foreach ($queues as $queue => $opts) {
             $table = new AMQPTable(
                 collect($opts['arguments'] ?? [])
@@ -55,7 +53,6 @@ final class ConsumeQueues extends Command
             }
         }
 
-        // 3) Start consuming
         $ch->basic_qos(null, 1, null);
 
         foreach (array_keys($queues) as $queue) {

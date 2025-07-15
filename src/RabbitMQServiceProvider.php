@@ -17,7 +17,6 @@ final class RabbitMQServiceProvider extends ServiceProvider
             'rabbitmq'
         );
 
-        // Expand retry rules
         $cfg = config('rabbitmq');
         ['exchanges' => $ex, 'queues' => $qs] = QueueConfigurator::build($cfg);
         config()->set('rabbitmq.exchanges', $ex);

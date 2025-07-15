@@ -12,13 +12,6 @@ final class Publisher
 {
     public function __construct(private ConnectionManager $conn) {}
 
-    /**
-     * Publish to an exchange with routing key.
-     *
-     * @param  string  $exchange
-     * @param  string  $routingKey
-     * @param  array   $payload
-     */
     public function publish(string $exchange, string $routingKey, array $payload): void
     {
         $exchanges = config('rabbitmq.exchanges', []);
